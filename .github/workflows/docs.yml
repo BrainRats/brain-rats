@@ -1,0 +1,47 @@
+name: Build & Deploy Docs
+on:
+  push:
+    branches: [pages]
+
+permissions:
+  contents: write      # permite gravar no branch gh-pages
+  pages: write         # necessário se usar novo Pages via Actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source (pages)
+        uses: actions/checkout@v4
+        with:
+          # Importante para acessar apenas o branch pages
+          ref: pages
+          fetch-depth: 0          # necessário p/ gh-pages histórico limpo
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Docusaurus
+        run: npm run build        # cria a pasta build/
+
+      # Opção A – usar comando oficial
+      #- name: Deploy via yarn
+      #  env:
+      #    GIT_USER: ${{ github.actor }}
+      #    USE_SSH: "false"
+      #  run: |
+      #    npx docusaurus deploy \
+      #        --skip-build \
+      #        --out-dir=build
+
+      # Opção B – usar peaceiris/actions‑gh‑pages
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build       # pasta que Docusaurus gerou
+          publish_branch: gh-pages   # destino

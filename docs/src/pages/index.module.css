@@ -1,0 +1,52 @@
+.context {
+  padding: 2rem 0;
+}
+
+.cards {
+  padding: 2rem 0;
+  background: var(--ifm-background-surface-color-secondary);
+}
+
+.card:hover {
+  box-shadow: var(--ifm-global-shadow-lw);
+  transition: box-shadow 0.2s ease;
+}
+
+.cta {
+  padding: 2rem 0 3rem;
+  
+}
+
+/* centraliza tudo no hero */
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* eixo-cruzado */
+  text-align: center;    /* texto no eixo principal */
+  gap: 1rem;             /* espaçamento vertical */
+}
+
+/* (opcional) mantém cartões claros no dark-mode */
+.card {
+  background: var(--ifm-background-surface-color);
+  border-radius: 0.5rem;
+  transition: box-shadow var(--ifm-transition-fast) ease;
+}
+.card:hover {
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+/* Borda fina e arredondada nos cards */
+.card {
+  /* mantém preenchimento já existente */
+  border: 1px solid var(--ifm-color-emphasis-300); /* cor neutra do tema */
+  border-radius: 0.5rem;
+  background: var(--ifm-background-surface-color);
+  transition: box-shadow var(--ifm-transition-fast) ease;
+}
+
+/* realce sutil no hover/focus */
+.card:hover,
+.card:focus-within {
+  box-shadow: var(--ifm-global-shadow-lw);
+}

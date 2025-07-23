@@ -1,0 +1,58 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* ----------------------------  TEMA CLARO  ---------------------------- */
+/* You can override the default Infima variables here. */
+/* ----------------------------  TEMA CLARO  ---------------------------- */
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #0072bb;      /* Azul‑base                               */
+  --ifm-color-primary-dark: #005f9d; /* −15 % de luminosidade                   */
+  --ifm-color-primary-darker: #004d80;/* −30 %                                   */
+  --ifm-color-primary-darkest: #003b63;/* −45 %                                  */
+
+  --ifm-color-primary-light: #0d84d1;   /* +15 %                                  */
+  --ifm-color-primary-lighter: #1996e7; /* +30 %                                  */
+  --ifm-color-primary-lightest: #2ea6ff;/* +45 %                                  */
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* ----------------------------  TEMA ESCURO  --------------------------- */
+/* Mantemos contraste alto clareando o azul‑base. */
+[data-theme='dark'] {
+  --ifm-color-primary: #3fb0ff;      /* Azul claro p/ links + botões            */
+  --ifm-color-primary-dark: #2ca2ff; /* −10 %                                   */
+  --ifm-color-primary-darker: #1e94fa;/* −20 %                                   */
+  --ifm-color-primary-darkest: #0087ea;/* −35 %                                   */
+
+  --ifm-color-primary-light: #6cc2ff;   /* +20 %                                  */
+  --ifm-color-primary-lighter: #99d4ff; /* +40 %                                  */
+  --ifm-color-primary-lightest: #cce7ff;/* +60 %                                  */
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Estilo para o cabeçalho da tabela */
+table th {
+  background-color: var(--ifm-color-primary-dark); /* Cor escura para o cabeçalho */
+  color: white;
+}
+
+[data-theme='dark'] table th {
+  background-color: var(--ifm-color-primary); /* Cor de fundo mais vibrante para o cabeçalho */
+}
+
+p { 
+  text-align: justify;
+}
